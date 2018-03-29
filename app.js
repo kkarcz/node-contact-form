@@ -21,14 +21,14 @@ app.get('/', (req, res) => {
 app.post('/send', (req, res) => {
   const output = `
   <p>You have a new contact request</p>
-  <h3>Contact Details</h3>
+  <h3>Contact Details:</h3>
   <ul>
     <li>Name: ${req.body.name} </li>
     <li>Surname: ${req.body.surname}</li>
     <li>Email: ${req.body.email}</li>
     <li>Phone: ${req.body.phone}</li>
   </ul>
-  <h3>Message</h3>
+  <h3>Message:</h3>
   <p>${req.body.message}</p>
   `;
 
