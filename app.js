@@ -6,6 +6,10 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const host = process.env.HOST || 'smtp.gmail.com';
+const portz = process.env.PORTZ || 587;
+const mail = process.env.MAIL || 'krzyskarcz@gmail.com';
+const password = process.env.PASSWORD || 'srajda55';
 
 app.engine('handlebars', exphbs());
 app.set ('view engine', 'handlebars');
@@ -34,12 +38,12 @@ app.post('/send', (req, res) => {
   `;
 
   let transporter = nodemailer.createTransport({
-    host: process.env.HOST || 'smtp.gmail.com',
-    port: process.env.PORT || 587,
+    host: host,
+    port: portz,
     secure: false,
     auth: {
-        user: process.env.MAIL || 'krzyskarcz@gmail.com',
-        pass: process.env.PASSWORD || 'srajda55'
+        user: mail,
+        pass: password
     },
     tls: {
       rejectUnauthorized: false
