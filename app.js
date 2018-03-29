@@ -34,12 +34,12 @@ app.post('/send', (req, res) => {
   `;
 
   let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
+    host: process.env.HOST || 'smtp.gmail.com',
+    port: process.env.PORT || 587,
     secure: false,
     auth: {
-        user: 'krzyskarcz@gmail.com',
-        pass: 'srajda55'
+        user: process.env.MAIL || 'krzyskarcz@gmail.com',
+        pass: process.env.PASSWORD || 'srajda55'
     },
     tls: {
       rejectUnauthorized: false
