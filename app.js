@@ -5,11 +5,12 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
+conosle.log(JSON.stringify(process.env, null, 2));
 const port = process.env.PORT || 3000;
-const host = process.env.HOST || 'smtp.gmail.com';
-const portz = process.env.PORTZ || 465;
-const mail = process.env.MAIL || 'krzyskarcz@gmail.com';
-const password = process.env.PASSWORD || 'srajda55';
+const host = process.env.MAIL_HOST || 'smtp.gmail.com';
+const portz = process.env.MAIL_PORTZ || 465;
+const mail = process.env.MAIL_MAIL || 'krzyskarcz@gmail.com';
+const password = process.env.MAIL_PASS || 'srajda55';
 
 app.engine('handlebars', exphbs());
 app.set ('view engine', 'handlebars');
