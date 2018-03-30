@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || 'smtp.gmail.com';
-const portz = process.env.PORTZ || 587;
+const portz = process.env.PORTZ || 465;
 const mail = process.env.MAIL || 'krzyskarcz@gmail.com';
 const password = process.env.PASSWORD || 'srajda55';
 
@@ -40,7 +40,7 @@ app.post('/send', (req, res) => {
   let transporter = nodemailer.createTransport({
     host: host,
     port: portz,
-    secure: false,
+    secure: true,
     auth: {
         user: mail,
         pass: password
