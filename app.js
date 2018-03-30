@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
-conosle.log(JSON.stringify(process.env, null, 2));
+// console.log(JSON.stringify(process.env, null, 2));
 const port = process.env.PORT || 3000;
 const host = process.env.MAIL_HOST || 'smtp.gmail.com';
 const portz = process.env.MAIL_PORTZ || 465;
